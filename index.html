@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>大衛王的兒子棒球隊（優化版）</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Noto Sans TC', sans-serif;
+      background-color: #f2f7f5;
+      text-align: center;
+    }
+    h1 {
+      margin-top: 20px;
+      color: #2c3e50;
+    }
+    .field-container {
+      position: relative;
+      display: inline-block;
+      margin-top: 10px;
+    }
+    .player {
+      position: absolute;
+      background-color: rgba(255, 255, 200, 0.95);
+      border: 1px solid #aaa;
+      border-radius: 8px;
+      padding: 4px 8px;
+      font-weight: bold;
+      font-size: 14px;
+      cursor: pointer;
+      box-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+    }
+    #info-box {
+      display: none;
+      background-color: #fff;
+      padding: 20px;
+      margin: 30px auto;
+      border-radius: 10px;
+      max-width: 600px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+    }
+    #info-box h3 {
+      margin-bottom: 10px;
+      font-size: 20px;
+      color: #2d3436;
+    }
+    #info-box p {
+      font-size: 16px;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+  <h1>⚾ 大衛王的兒子棒球隊</h1>
+  <p>點擊球員查看特質與金句</p>
+
+  <div class="field-container">
+    <img src="field-cartoon.png" alt="棒球場背景" width="800" />
+    <div class="player" style="top: 60px; left: 370px;" onclick="showInfo('所羅門')">所羅門</div>
+    <div class="player" style="top: 120px; left: 370px;" onclick="showInfo('拿單')">拿單</div>
+    <div class="player" style="top: 120px; left: 270px;" onclick="showInfo('押沙龍')">押沙龍</div>
+    <div class="player" style="top: 120px; left: 470px;" onclick="showInfo('亞多尼雅')">亞多尼雅</div>
+    <div class="player" style="top: 120px; left: 200px;" onclick="showInfo('暗嫩')">暗嫩</div>
+    <div class="player" style="top: 120px; left: 540px;" onclick="showInfo('示米亞')">示米亞</div>
+    <div class="player" style="top: 200px; left: 150px;" onclick="showInfo('以利沙瑪')">以利沙瑪</div>
+    <div class="player" style="top: 200px; left: 370px;" onclick="showInfo('米非波設')">米非波設</div>
+    <div class="player" style="top: 200px; left: 600px;" onclick="showInfo('以利雅大')">以利雅大</div>
+  </div>
+
+  <div id="info-box">
+    <h3 id="info-name"></h3>
+    <p id="info-text"></p>
+  </div>
+
+  <script>
+    const info = {
+      '所羅門': '我是投手，我用智慧來掌控比賽！<br>📖 箴言 1:7 敬畏耶和華是智慧的開端。',
+      '拿單': '我是捕手，觀察全場，準備好接球！<br>📖 雅各書 1:19 要快快地聽，慢慢地說。',
+      '押沙龍': '我是最帥的一壘手！但我也學謙卑喔～<br>📖 箴言 16:18 驕傲在敗壞以先。',
+      '亞多尼雅': '我是二壘手，努力學習服事大家！<br>📖 路加福音 14:11 凡自高的必降為卑。',
+      '暗嫩': '我曾做錯事，但我正在學正直行事。<br>📖 提摩太後書 2:22 逃避少年人的私慾。',
+      '示米亞': '我是游擊手，我會安靜守好中間喔～<br>📖 馬太福音 24:45 忠心又有見識的僕人。',
+      '以利沙瑪': '我是左外野手，盡忠職守，守住邊線！<br>📖 申命記 31:6 剛強壯膽，不要懼怕。',
+      '米非波設': '啊～我腳不太靈光啦，但能上場就是恩典！<br>📖 撒母耳記下 9:7 不要懼怕，我必恩待你。',
+      '以利雅大': '我是右外野，負責遠距離長打和守備！<br>📖 詩篇 28:7 耶和華是我的力量與盾牌。'
+    };
+    function showInfo(name) {
+      document.getElementById('info-box').style.display = 'block';
+      document.getElementById('info-name').innerHTML = name;
+      document.getElementById('info-text').innerHTML = info[name];
+    }
+  </script>
+</body>
+</html>
